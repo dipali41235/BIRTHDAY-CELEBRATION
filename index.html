@@ -101,17 +101,24 @@
 
         @keyframes pulse {
             0%, 100% {
-                opacity: 0.4; transform: scale(1);
+                opacity: 0.4;
+                transform: scale(1);
             }
             50% {
-                opacity: 0.8; transform: scale(1.3);
+                opacity: 0.8;
+                transform: scale(1.3);
             }
         }
 
         .lightning-bolt {
             position: absolute;
             width: 4px;
-            background: linear-gradient(180deg, transparent 0%, #87CEEB 20%, #4169E1 50%, #87CEEB 80%, transparent 100%);
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                #87CEEB 20%, 
+                #4169E1 50%, 
+                #87CEEB 80%, 
+                transparent 100%);
             box-shadow: 
                 0 0 25px #4169E1,
                 0 0 50px rgba(65, 105, 225, 0.6),
@@ -120,9 +127,26 @@
             animation: lightning-strike 6s ease-in-out infinite;
         }
 
-        .bolt-1 { height: 140px; top: 15%; left: 12%; animation-delay: 0s; }
-        .bolt-2 { height: 120px; top: 55%; right: 18%; animation-delay: 3s; }
-        .bolt-3 { height: 100px; top: 35%; left: 85%; animation-delay: 4.5s; }
+        .bolt-1 {
+            height: 140px;
+            top: 15%;
+            left: 12%;
+            animation-delay: 0s;
+        }
+
+        .bolt-2 {
+            height: 120px;
+            top: 55%;
+            right: 18%;
+            animation-delay: 3s;
+        }
+
+        .bolt-3 {
+            height: 100px;
+            top: 35%;
+            left: 85%;
+            animation-delay: 4.5s;
+        }
 
         @keyframes lightning-strike {
             0%, 93%, 100% { opacity: 0; }
@@ -173,10 +197,20 @@
         .particle-6 { bottom: 0; left: 65%; animation-delay: 1s; }
 
         @keyframes float-up {
-            0% { transform: translateY(0) scale(1); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-700px) scale(0.3); opacity: 0; }
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-700px) scale(0.3);
+                opacity: 0;
+            }
         }
 
         .star-twinkle {
@@ -208,14 +242,26 @@
             width: 100%;
             height: 2px;
             left: 0;
-            background: linear-gradient(90deg, transparent 0%, #87CEEB 25%, #4169E1 50%, #87CEEB 75%, transparent 100%);
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                #87CEEB 25%, 
+                #4169E1 50%, 
+                #87CEEB 75%, 
+                transparent 100%);
             box-shadow: 0 0 20px rgba(65, 105, 225, 0.8);
             opacity: 0;
             animation: wave-pulse 8s ease-in-out infinite;
         }
 
-        .wave-1 { top: 20%; animation-delay: 0s; }
-        .wave-2 { top: 80%; animation-delay: 4s; }
+        .wave-1 {
+            top: 20%;
+            animation-delay: 0s;
+        }
+
+        .wave-2 {
+            top: 80%;
+            animation-delay: 4s;
+        }
 
         @keyframes wave-pulse {
             0%, 90%, 100% { opacity: 0; transform: scaleX(0); }
@@ -241,8 +287,12 @@
         }
 
         @keyframes glow-text {
-            0%, 100% { text-shadow: 0 0 30px rgba(135, 206, 250, 1); }
-            50% { text-shadow: 0 0 50px rgba(135, 206, 250, 1), 0 0 70px rgba(65, 105, 225, 0.8); }
+            0%, 100% {
+                text-shadow: 0 0 30px rgba(135, 206, 250, 1);
+            }
+            50% {
+                text-shadow: 0 0 50px rgba(135, 206, 250, 1), 0 0 70px rgba(65, 105, 225, 0.8);
+            }
         }
 
         h1 {
@@ -261,13 +311,21 @@
         }
 
         @keyframes shimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         @keyframes title-glow {
-            0%, 100% { filter: drop-shadow(0 0 40px rgba(65, 105, 225, 1)); }
-            50% { filter: drop-shadow(0 0 60px rgba(135, 206, 250, 1)) drop-shadow(0 0 80px rgba(65, 105, 225, 0.8)); }
+            0%, 100% {
+                filter: drop-shadow(0 0 40px rgba(65, 105, 225, 1));
+            }
+            50% {
+                filter: drop-shadow(0 0 60px rgba(135, 206, 250, 1)) drop-shadow(0 0 80px rgba(65, 105, 225, 0.8));
+            }
         }
 
         .subtitle {
@@ -282,14 +340,23 @@
         }
 
         @keyframes subtitle-pulse {
-            0%, 100% { text-shadow: 0 0 25px rgba(65, 105, 225, 0.8); }
-            50% { text-shadow: 0 0 40px rgba(65, 105, 225, 1), 0 0 60px rgba(135, 206, 250, 0.6); }
+            0%, 100% {
+                text-shadow: 0 0 25px rgba(65, 105, 225, 0.8);
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(65, 105, 225, 1), 0 0 60px rgba(135, 206, 250, 0.6);
+            }
         }
 
         .divider {
             width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, transparent 0%, #87CEEB 25%, #4169E1 50%, #87CEEB 75%, transparent 100%);
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                #87CEEB 25%, 
+                #4169E1 50%, 
+                #87CEEB 75%, 
+                transparent 100%);
             margin: 40px auto;
             box-shadow: 0 0 20px rgba(65, 105, 225, 0.9), 0 0 40px rgba(135, 206, 250, 0.5);
             animation: divider-glow 3s ease-in-out infinite;
@@ -310,8 +377,14 @@
             animation: dot-pulse 2s ease-in-out infinite;
         }
 
-        .divider::before { left: -15px; }
-        .divider::after { right: -15px; animation-delay: 1s; }
+        .divider::before {
+            left: -15px;
+        }
+
+        .divider::after {
+            right: -15px;
+            animation-delay: 1s;
+        }
 
         @keyframes dot-pulse {
             0%, 100% {
@@ -325,8 +398,12 @@
         }
 
         @keyframes divider-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(65, 105, 225, 0.9), 0 0 40px rgba(135, 206, 250, 0.5); }
-            50% { box-shadow: 0 0 35px rgba(65, 105, 225, 1), 0 0 60px rgba(135, 206, 250, 0.8); }
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(65, 105, 225, 0.9), 0 0 40px rgba(135, 206, 250, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(65, 105, 225, 1), 0 0 60px rgba(135, 206, 250, 0.8);
+            }
         }
 
         .message {
@@ -346,8 +423,12 @@
         }
 
         @keyframes highlight-glow {
-            0%, 100% { text-shadow: 0 0 25px rgba(135, 206, 250, 0.9); }
-            50% { text-shadow: 0 0 35px rgba(135, 206, 250, 1), 0 0 50px rgba(65, 105, 225, 0.6); }
+            0%, 100% {
+                text-shadow: 0 0 25px rgba(135, 206, 250, 0.9);
+            }
+            50% {
+                text-shadow: 0 0 35px rgba(135, 206, 250, 1), 0 0 50px rgba(65, 105, 225, 0.6);
+            }
         }
 
         .celebration-text {
@@ -361,8 +442,14 @@
         }
 
         @keyframes celebration-pulse {
-            0%, 100% { text-shadow: 0 0 30px rgba(65, 105, 225, 1); transform: scale(1); }
-            50% { text-shadow: 0 0 45px rgba(65, 105, 225, 1), 0 0 60px rgba(135, 206, 250, 0.8); transform: scale(1.02); }
+            0%, 100% {
+                text-shadow: 0 0 30px rgba(65, 105, 225, 1);
+                transform: scale(1);
+            }
+            50% {
+                text-shadow: 0 0 45px rgba(65, 105, 225, 1), 0 0 60px rgba(135, 206, 250, 0.8);
+                transform: scale(1.02);
+            }
         }
 
         .from {
@@ -388,8 +475,16 @@
         }
 
         @keyframes signature-glow {
-            0%, 100% { text-shadow: 0 0 40px rgba(65, 105, 225, 1), 0 0 70px rgba(135, 206, 250, 0.7); }
-            50% { text-shadow: 0 0 60px rgba(65, 105, 225, 1), 0 0 90px rgba(135, 206, 250, 0.9); }
+            0%, 100% {
+                text-shadow: 
+                    0 0 40px rgba(65, 105, 225, 1),
+                    0 0 70px rgba(135, 206, 250, 0.7);
+            }
+            50% {
+                text-shadow: 
+                    0 0 60px rgba(65, 105, 225, 1),
+                    0 0 90px rgba(135, 206, 250, 0.9);
+            }
         }
 
         .corner-frame {
@@ -403,4 +498,140 @@
             animation: corner-pulse 4s ease-in-out infinite;
         }
 
-        @keyframes corner-pulse
+        @keyframes corner-pulse {
+            0%, 100% {
+                box-shadow: 
+                    0 0 20px rgba(65, 105, 225, 0.8),
+                    inset 0 0 20px rgba(65, 105, 225, 0.3);
+                border-color: #4169E1;
+            }
+            50% {
+                box-shadow: 
+                    0 0 35px rgba(135, 206, 250, 1),
+                    inset 0 0 35px rgba(135, 206, 250, 0.5);
+                border-color: #87CEEB;
+            }
+        }
+
+        .corner-frame.top-left {
+            top: 15px;
+            left: 15px;
+            border-right: none;
+            border-bottom: none;
+            animation-delay: 0s;
+        }
+
+        .corner-frame.top-right {
+            top: 15px;
+            right: 15px;
+            border-left: none;
+            border-bottom: none;
+            animation-delay: 1s;
+        }
+
+        .corner-frame.bottom-left {
+            bottom: 15px;
+            left: 15px;
+            border-right: none;
+            border-top: none;
+            animation-delay: 3s;
+        }
+
+        .corner-frame.bottom-right {
+            bottom: 15px;
+            right: 15px;
+            border-left: none;
+            border-top: none;
+            animation-delay: 2s;
+        }
+
+        .closing {
+            font-size: 17px;
+            color: #b0c4de;
+            margin-top: 40px;
+            letter-spacing: 1px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-card">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        <div class="glow-orb orb-4"></div>
+        
+        <div class="lightning-bolt bolt-1"></div>
+        <div class="lightning-bolt bolt-2"></div>
+        <div class="lightning-bolt bolt-3"></div>
+
+        <div class="electric-spark spark-1"></div>
+        <div class="electric-spark spark-2"></div>
+        <div class="electric-spark spark-3"></div>
+        <div class="electric-spark spark-4"></div>
+        <div class="electric-spark spark-5"></div>
+
+        <div class="floating-particle particle-1"></div>
+        <div class="floating-particle particle-2"></div>
+        <div class="floating-particle particle-3"></div>
+        <div class="floating-particle particle-4"></div>
+        <div class="floating-particle particle-5"></div>
+        <div class="floating-particle particle-6"></div>
+
+        <div class="star-twinkle star-1"></div>
+        <div class="star-twinkle star-2"></div>
+        <div class="star-twinkle star-3"></div>
+        <div class="star-twinkle star-4"></div>
+        <div class="star-twinkle star-5"></div>
+        <div class="star-twinkle star-6"></div>
+        <div class="star-twinkle star-7"></div>
+        <div class="star-twinkle star-8"></div>
+
+        <div class="energy-wave wave-1"></div>
+        <div class="energy-wave wave-2"></div>
+
+        <div class="corner-frame top-left"></div>
+        <div class="corner-frame top-right"></div>
+        <div class="corner-frame bottom-left"></div>
+        <div class="corner-frame bottom-right"></div>
+
+        <div class="content">
+            <p class="header">You Are Cordially Invited</p>
+            
+            <h1>DIPALI</h1>
+            
+            <p class="subtitle">Birthday Celebration</p>
+            
+            <div class="divider"></div>
+            
+            <div class="message">
+                Join us for an evening of <span class="highlight">elegance, laughter,</span><br>
+                and <span class="highlight">unforgettable memories</span><br>
+                as we celebrate another remarkable year
+            </div>
+            
+            <div class="divider"></div>
+
+            <!-- <p class="celebration-text">
+                Let's raise a toast to life's beautiful moments
+            </p> -->
+
+            <div class="message">
+                An evening filled with joy and celebration<br>
+                awaits as we honor this special milestone.<br>
+                Your presence would make the occasion truly complete.
+            </div>
+            
+            <div class="divider"></div>
+            
+            <!-- <p class="from">Hosted By</p>
+            <p class="signature">Dipali</p> -->
+
+            <p class="closing">
+                Looking forward to celebrating with you
+            </p>
+        </div>
+    </div>
+</body>
+</html>
