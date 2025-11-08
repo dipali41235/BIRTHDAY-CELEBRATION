@@ -11,7 +11,6 @@
             box-sizing: border-box;
         }
         
-
         body {
             font-family: 'Cormorant Garamond', 'Georgia', serif;
             display: flex;
@@ -20,6 +19,46 @@
             min-height: 100vh;
             background: #000000;
             padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOut 1s ease-out 2s forwards;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-text {
+            font-size: 24px;
+            color: #87CEEB;
+            letter-spacing: 4px;
+            text-shadow: 0 0 30px rgba(135, 206, 250, 1);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
         }
 
         .invitation-card {
@@ -36,7 +75,20 @@
                 0 0 100px rgba(135, 206, 250, 0.4),
                 0 20px 60px rgba(0, 0, 0, 0.9),
                 inset 0 0 100px rgba(65, 105, 225, 0.1);
-            animation: card-glow 4s ease-in-out infinite;
+            animation: card-glow 4s ease-in-out infinite, slideIn 1s ease-out 2s backwards;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
        
         @keyframes card-glow {
@@ -60,7 +112,7 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(60px);
-            animation: pulse 4s ease-in-out infinite;
+            animation: pulse-orb 4s ease-in-out infinite;
         }
 
         .orb-1 {
@@ -100,7 +152,7 @@
             animation-delay: 3s;
         }
 
-        @keyframes pulse {
+        @keyframes pulse-orb {
             0%, 100% {
                 opacity: 0.4;
                 transform: scale(1);
@@ -554,9 +606,180 @@
             font-style: italic;
             line-height: 1.8;
         }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .invitation-card {
+                padding: 50px 30px;
+                max-width: 95%;
+            }
+
+            .header {
+                font-size: 11px;
+                letter-spacing: 3px;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+                letter-spacing: 6px;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+                letter-spacing: 3px;
+                margin-bottom: 30px;
+            }
+
+            .message {
+                font-size: 16px;
+                line-height: 1.9;
+                margin: 25px 0;
+            }
+
+            .celebration-text {
+                font-size: 17px;
+                letter-spacing: 1.5px;
+                margin: 25px 0;
+            }
+
+            .from {
+                font-size: 14px;
+                letter-spacing: 3px;
+                margin-top: 35px;
+            }
+
+            .signature {
+                font-size: 20px;
+                letter-spacing: 2px;
+                margin-top: 12px;
+            }
+
+            .closing {
+                font-size: 15px;
+                margin-top: 30px;
+            }
+
+            .divider {
+                width: 80px;
+                margin: 30px auto;
+            }
+
+            .corner-frame {
+                width: 35px;
+                height: 35px;
+                border-width: 2px;
+            }
+
+            .corner-frame.top-left,
+            .corner-frame.top-right,
+            .corner-frame.bottom-left,
+            .corner-frame.bottom-right {
+                top: 10px;
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+            }
+
+            .corner-frame.top-left { top: 10px; left: 10px; }
+            .corner-frame.top-right { top: 10px; right: 10px; }
+            .corner-frame.bottom-left { bottom: 10px; left: 10px; }
+            .corner-frame.bottom-right { bottom: 10px; right: 10px; }
+
+            .orb-1 {
+                width: 200px;
+                height: 200px;
+                top: -60px;
+                left: -60px;
+            }
+
+            .orb-2 {
+                width: 180px;
+                height: 180px;
+                bottom: -50px;
+                right: -50px;
+            }
+
+            .orb-3 {
+                width: 150px;
+                height: 150px;
+            }
+
+            .orb-4 {
+                width: 130px;
+                height: 130px;
+            }
+
+            .loading-text {
+                font-size: 18px;
+                letter-spacing: 3px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .invitation-card {
+                padding: 40px 25px;
+            }
+
+            .header {
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            h1 {
+                font-size: 20px;
+                letter-spacing: 4px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+                letter-spacing: 2px;
+            }
+
+            .message {
+                font-size: 14px;
+                line-height: 1.8;
+            }
+
+            .celebration-text {
+                font-size: 15px;
+                letter-spacing: 1px;
+            }
+
+            .from {
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+
+            .signature {
+                font-size: 18px;
+                letter-spacing: 1.5px;
+            }
+
+            .closing {
+                font-size: 13px;
+            }
+
+            .loading-text {
+                font-size: 16px;
+                letter-spacing: 2px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-text">Loading Invitation...</div>
+        </div>
+    </div>
+
     <div class="invitation-card">
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
@@ -600,8 +823,6 @@
         <div class="content">
             <p class="header">you are cordially invited For</p>
             
-            <!-- <h1>DIPALI</h1> -->
-            
             <p class="subtitle">Birthday Celebration</p>
             
             <div class="divider"></div>
@@ -614,10 +835,6 @@
             
             <div class="divider"></div>
 
-            <!-- <p class="celebration-text">
-                Let's raise a toast to life's beautiful moments
-            </p> -->
-
             <div class="message">
                 An evening filled with joy and celebration<br>
                 awaits as we honor this special milestone.<br>
@@ -627,12 +844,12 @@
             <div class="divider"></div>
             
             <p class="from">Hosted By</p>
-            <p class="signature"> Dipali , Anubhav and Aman</p> 
+            <p class="signature">Dipali, Anubhav and Aman</p> 
             <br>
 
-                            <p class="from"> On 9th of November</p>
+            <p class="from">On 9th of November</p>
             <br>
-                        <p class="from"> VENUE : Cafe ElleBee  </p>
+            <p class="from">VENUE: Cafe ElleBee</p>
             <p class="closing">
                 Looking forward to Celebrating with You
             </p>
@@ -640,61 +857,3 @@
     </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
