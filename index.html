@@ -22,44 +22,7 @@
             overflow-x: hidden;
         }
 
-        /* Loading Screen */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            animation: fadeOut 1s ease-out 2s forwards;
-        }
-
-        .loading-content {
-            text-align: center;
-        }
-
-        .loading-text {
-            font-size: 24px;
-            color: #87CEEB;
-            letter-spacing: 4px;
-            text-shadow: 0 0 30px rgba(135, 206, 250, 1);
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
+        /* Smooth entrance animation */
 
         .invitation-card {
             width: 100%;
@@ -75,14 +38,12 @@
                 0 0 100px rgba(135, 206, 250, 0.4),
                 0 20px 60px rgba(0, 0, 0, 0.9),
                 inset 0 0 100px rgba(65, 105, 225, 0.1);
-            animation: card-glow 4s ease-in-out infinite, slideIn 1s ease-out 2s backwards;
-            opacity: 0;
-            animation-fill-mode: forwards;
+            animation: card-glow 4s ease-in-out infinite, slideIn 0.8s ease-out forwards;
         }
 
         @keyframes slideIn {
             from {
-                transform: translateY(100px);
+                transform: translateY(50px);
                 opacity: 0;
             }
             to {
@@ -764,22 +725,10 @@
             .closing {
                 font-size: 13px;
             }
-
-            .loading-text {
-                font-size: 16px;
-                letter-spacing: 2px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-        <div class="loading-content">
-            <div class="loading-text">Loading Invitation...</div>
-        </div>
-    </div>
-
     <div class="invitation-card">
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
